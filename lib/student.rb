@@ -36,5 +36,5 @@ class Student
     students = Students.new(name, grade)
     students.save
     students
-  end 
+  end
 end
