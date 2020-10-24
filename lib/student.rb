@@ -17,7 +17,7 @@ class Student
       CREATE TABLE IF NOT EXISTS student (
         id INTEGER PRIMARY KEY,
         name TEXT,
-        grade INTEGER
+        grade TEXT
       )
       SQL
       DB[:conn].execute(sql)
@@ -33,6 +33,7 @@ class Student
     INSERT INTO student (name, grade)
     VALUES (?, ?)
     SQL
+    
     DB[:conn].execute(sql, self.name, self.grade)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM student")[0][0]
   end
